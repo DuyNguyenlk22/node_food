@@ -15,12 +15,7 @@ export const addLike = async (req, res) => {
       },
     });
     if (isLike) {
-      respsonseData(
-        res,
-        "Người dùng đã like nhà hàng này trước đó.",
-        false,
-        400,
-      );
+      respsonseData(res, "Người dùng đã like nhà hàng này trước đó.", false, 400);
       return;
     }
     let newData = {
@@ -42,7 +37,7 @@ export const getListLikeByUserAndRes = async (req, res) => {
       where: {
         res_id,
       },
-      include: ["user"],
+      include: ["user", "re"],
     });
 
     respsonseData(res, "Thành công", data, 200);

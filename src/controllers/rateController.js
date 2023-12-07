@@ -38,7 +38,7 @@ export const getListRateByRes = async (req, res) => {
       where: {
         res_id,
       },
-      include: ["user"],
+      include: ["user", "re"],
     });
     respsonseData(res, "Thành công", data, 200);
   } catch {
